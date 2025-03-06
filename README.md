@@ -37,7 +37,7 @@ messages:
 
 | Plugin Version | Version | Download |
 |----------------|:---------:|----------------:|
-| 1.2 | 1.21.4 | [Download v1.1](https://github.com/OluniOfficial/AutoTorch/releases/download/v1.2/AutoTorch-1.2.jar) |
+| 1.2 | 1.21.4 | [Download v1.2](https://github.com/OluniOfficial/AutoTorch/releases/download/v1.2/AutoTorch-1.2.jar) |
 
 ### ❗ Bugs report
 
