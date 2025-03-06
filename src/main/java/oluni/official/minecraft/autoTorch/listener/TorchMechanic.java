@@ -1,5 +1,8 @@
-package oluni.official.minecraft.autoTorch;
+package oluni.official.minecraft.autoTorch.listener;
 
+import oluni.official.minecraft.autoTorch.AutoTorch;
+import oluni.official.minecraft.autoTorch.config.ConfigManager;
+import oluni.official.minecraft.autoTorch.utils.MessageUtils;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;
@@ -35,23 +38,22 @@ public class TorchMechanic implements CommandExecutor, TabCompleter, Listener {
                 if (p.hasPermission("torch.toggle")) {
                     if (torch.contains(p.getUniqueId())) {
                         torch.remove(p.getUniqueId());
-                        p.sendMessage(ChatColor.GREEN + "[✔ | AutoTorch] → You have turned off auto torch mode!");
+                        MessageUtils.sendMessage(p, ConfigManager.gCfg().getString("messages.turn-off"), null);
                     } else {
                         torch.add(p.getUniqueId());
-                        p.sendMessage(ChatColor.GREEN + "[✔ | AutoTorch] → You have turned on auto torch mode! (WARNING: It will turn off automatically after a minute.)");
+                        MessageUtils.sendMessage(p, ConfigManager.gCfg().getString("messages.turn-on"), null);
                         Bukkit.getScheduler().runTaskLater(plugin, () -> {
                             if (torch.contains(p.getUniqueId())) {
                                 torch.remove(p.getUniqueId());
-                                p.sendMessage(ChatColor.RED + "[✘ | AutoTorch] → Auto torch mode disabled (time expired).");
-                                Bukkit.getLogger().info(p.getName() + " AutoTorch вимкнувся автоматично.");
+                                MessageUtils.sendMessage(p, ConfigManager.gCfg().getString("messages.auto-disable"), null);
                             }
-                        }, 1200L);
+                        }, ConfigManager.getTime() * 20L);
                     }
                 }
             } else if (args.length == 1 && args[0].equalsIgnoreCase("reload")) {
                 if (p.hasPermission("torch.reload")) {
                     ConfigManager.reloadConfig(plugin);
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a[✔ | AutoTorch] → Config reloaded!"));
+                    MessageUtils.sendMessage(p, "&#86DE7C[✔ | AutoTorch] → Config reloaded!", null);
                 }
             }
         }

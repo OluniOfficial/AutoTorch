@@ -1,5 +1,7 @@
 package oluni.official.minecraft.autoTorch;
 
+import oluni.official.minecraft.autoTorch.config.ConfigManager;
+import oluni.official.minecraft.autoTorch.listener.TorchMechanic;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 

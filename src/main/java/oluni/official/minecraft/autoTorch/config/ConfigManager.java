@@ -1,5 +1,6 @@
-package oluni.official.minecraft.autoTorch;
+package oluni.official.minecraft.autoTorch.config;
 
+import oluni.official.minecraft.autoTorch.AutoTorch;
 import org.bukkit.configuration.file.FileConfiguration;
 
 public class ConfigManager {
@@ -17,4 +18,11 @@ public class ConfigManager {
         return cfg.getInt("level-light", 7);
     }
 
+    public static FileConfiguration gCfg() {
+        return cfg;
+    }
+
+    public static int getTime() {
+        return cfg.getInt("auto-disable-time", 60);
+    }
 }

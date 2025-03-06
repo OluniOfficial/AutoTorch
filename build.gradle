@@ -1,7 +1,6 @@
 plugins {
     id 'java'
 }
-
 group = 'oluni.official.minecraft'
 version = '1.1'
 
