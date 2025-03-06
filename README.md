@@ -13,11 +13,18 @@ A simple **Minecraft Paper Plugin** that allows players to automatically place t
 ## ⚙️ Configuration (`config.yml`)
 ### 🔹 Default configuration:
 ```yaml
-light-level: 7
+level-light: 7
+auto-disable-time: 60
+messages:
+  turn-off: "&a[✔ | AutoTorch] → You have turned off auto torch mode!"
+  turn-on: "[✔ | AutoTorch] → You have turned on auto torch mode! (WARNING: It will turn off automatically after a minute.)"
+  auto-disable: "[✘ | AutoTorch] → Auto torch mode disabled (time expired)."
 ```
 
 ### 🔹 Config Options:
-light-level: Sets the minimum light level before a torch is placed.
+`light-level:` Sets the minimum light level before a torch is placed.
+`auto-disable-time:` Allows you to set the number of seconds before the auto-torch mode automatically turns off.
+`messages:` Setting up messages.
 
 ## 📚 Other information
 ### 🛠 Commands
@@ -30,7 +37,7 @@ light-level: Sets the minimum light level before a torch is placed.
 
 | Plugin Version | Version | Download |
 |----------------|:---------:|----------------:|
-| 1.1 | 1.21.4 | [Download v1.1](https://github.com/OluniOfficial/AutoTorch/releases/download/v1.1/AutoTorch-1.1.jar) |
+| 1.2 | 1.21.4 | [Download v1.1](https://github.com/OluniOfficial/AutoTorch/releases/download/v1.2/AutoTorch-1.2.jar) |
 
 ### ❗ Bugs report
 
