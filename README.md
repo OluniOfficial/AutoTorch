@@ -42,7 +42,7 @@ messages-on:
 
 | Plugin Version | Version | Download |
 |----------------|:---------:|----------------:|
-| 1.2.1 | 1.21.4 | [Download v1.2](https://github.com/OluniOfficial/AutoTorch/releases/download/v1.2.1/AutoTorch-1.2.1.jar) |
+| 1.2.1 | 1.21.4 | [Download v1.2.1](https://github.com/OluniOfficial/AutoTorch/releases/download/v1.2.1/AutoTorch-1.2.1.jar) |
 
 ### ❗ Bugs report
 
