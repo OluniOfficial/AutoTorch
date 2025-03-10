@@ -38,14 +38,20 @@ public class TorchMechanic implements CommandExecutor, TabCompleter, Listener {
                 if (p.hasPermission("torch.toggle")) {
                     if (torch.contains(p.getUniqueId())) {
                         torch.remove(p.getUniqueId());
-                        MessageUtils.sendMessage(p, ConfigManager.gCfg().getString("messages.turn-off"), null);
+                        if (ConfigManager.gCfg().getBoolean("messages-on.turn-off")) {
+                            MessageUtils.sendMessage(p, ConfigManager.gCfg().getString("messages.turn-off"), null);
+                        }
                     } else {
                         torch.add(p.getUniqueId());
-                        MessageUtils.sendMessage(p, ConfigManager.gCfg().getString("messages.turn-on"), null);
+                        if (ConfigManager.gCfg().getBoolean("messages-on.turn-on")) {
+                            MessageUtils.sendMessage(p, ConfigManager.gCfg().getString("messages.turn-on"), null);
+                        }
                         Bukkit.getScheduler().runTaskLater(plugin, () -> {
                             if (torch.contains(p.getUniqueId())) {
                                 torch.remove(p.getUniqueId());
+                                if (ConfigManager.gCfg().getBoolean("messages-on.auto-disable")) {
                                 MessageUtils.sendMessage(p, ConfigManager.gCfg().getString("messages.auto-disable"), null);
+                                }
                             }
                         }, ConfigManager.getTime() * 20L);
                     }
