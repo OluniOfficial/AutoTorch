@@ -19,12 +19,17 @@ messages:
   turn-off: "&a[✔ | AutoTorch] → You have turned off auto torch mode!"
   turn-on: "[✔ | AutoTorch] → You have turned on auto torch mode! (WARNING: It will turn off automatically after a minute.)"
   auto-disable: "[✘ | AutoTorch] → Auto torch mode disabled (time expired)."
+messages-on:
+  turn-off: true
+  turn-on: true
+  auto-disable: true
 ```
 
 ### 🔹 Config Options:
 `light-level:` Sets the minimum light level before a torch is placed.
 `auto-disable-time:` Allows you to set the number of seconds before the auto-torch mode automatically turns off.
 `messages:` Setting up messages.
+`messages-on:` Allows you to turn messages on or off. (1.2.1)
 
 ## 📚 Other information
 ### 🛠 Commands
@@ -37,7 +42,7 @@ messages:
 
 | Plugin Version | Version | Download |
 |----------------|:---------:|----------------:|
-| 1.2 | 1.21.4 | [Download v1.2](https://github.com/OluniOfficial/AutoTorch/releases/download/v1.2/AutoTorch-1.2.jar) |
+| 1.2.1 | 1.21.4 | [Download v1.2](https://github.com/OluniOfficial/AutoTorch/releases/download/v1.2.1/AutoTorch-1.2.1.jar) |
 
 ### ❗ Bugs report
 
